@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.article-image {
+  height: 200px;
+  object-fit: contain;
+}
+
+.card-fix {
+  height: 100% !important;
+  transition: background-color 500ms;
+}
+
+.details-button {
+  transition: transform 500ms !important
+}
+
+.card-fix:hover {
+  background-color: rgb(63, 61, 61) !important;
+}
+
+.card-fix:hover .details-button {
+  transform: scale(1.1);
+}
+
+.details-page-image {
+  height: 50vh !important;
+  object-fit: contain;
+}
