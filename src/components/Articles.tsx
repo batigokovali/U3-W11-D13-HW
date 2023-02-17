@@ -1,6 +1,7 @@
 import { Col, Card, Button } from 'react-bootstrap'
 import { IArticles } from '../interfaces/IArticles'
 import { useNavigate } from 'react-router-dom'
+import { parseISO, format } from 'date-fns'
 
 
 interface ArticleComponentProps {
@@ -17,6 +18,7 @@ const Articles = ({ article }: ArticleComponentProps) => {
                 <Card.Body className='d-flex flex-column justify-content-between'>
                     <Card.Title><>{article.title}</></Card.Title>
                     <Card.Text>By: {article.newsSite}</Card.Text>
+                    <Card.Text><>Published At: {format(parseISO(article.publishedAt), "EEEE, MMMM do p")}</></Card.Text>
                     <Button className='details-button' variant="primary" onClick={(() => { navigate(`/details/${article.id}`) })}>See Details</Button>
                 </Card.Body>
             </Card>
